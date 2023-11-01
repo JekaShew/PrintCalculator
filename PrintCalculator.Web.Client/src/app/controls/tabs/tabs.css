@@ -1,0 +1,25 @@
+.tabs {
+
+}
+
+    .tabs .selector {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        background: var(--ui-primary);
+        color: #e0e0e0;
+        padding-top: calc(1rem * var(--space-multiplier));
+        padding-bottom: calc(1rem * var(--space-multiplier));
+        font-weight: 600;
+        margin-bottom: calc(2rem * var(--space-multiplier));
+    }
+
+    .tabs .selector .item {
+        cursor: pointer;
+    }
+
+    .tabs .selector .item:hover,
+    .tabs .selector .item.active {
+        color: #ffffff;
+    }

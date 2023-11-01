@@ -1,0 +1,7 @@
+.autocomplete.autocomplete-string {
+    line-height: calc(1.5rem * var(--font-multiplier));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}

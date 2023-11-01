@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.Storage;
+using PrintCalculator.ViewModels.Data.Storage;
 using PrintCalculator.Abstract.StorageInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -59,9 +59,9 @@ namespace PrintCalculator.Services.StorageServices
         {
             var subCategory = await _appDBContext.SubCategories.FirstOrDefaultAsync(sc => sc.Id == updatedSubCategory.Id);
 
-            subCategory.Id = updatedSubCategory.Id;
+            subCategory.Id = updatedSubCategory.Id.Value;
             subCategory.Title = updatedSubCategory.Title;
-            subCategory.CategoryId = updatedSubCategory.Category.Id;
+            subCategory.CategoryId = updatedSubCategory.Category.VM.Id.Value;
             subCategory.Category = null;
 
             await _appDBContext.SaveChangesAsync();

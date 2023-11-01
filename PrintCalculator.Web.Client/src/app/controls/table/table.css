@@ -1,0 +1,142 @@
+.table {
+
+}
+
+
+
+.table .header {
+    position: relative;
+    margin-bottom: calc(1rem * var(--space-multiplier));
+}
+
+    .table .header .controls {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .table .header .custom-controls {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+    }
+
+.table .header .controls button:not(:first-child) {
+    margin-left: calc(0.5rem * var(--space-multiplier));
+}
+
+.table > .header > .label {
+    width: 100%;
+    font-size: calc(2rem * var(--font-multiplier));
+    color: var(--cl-primary);
+    text-align: center;
+}
+
+.table table {
+    width: 100%;
+    table-layout: fixed;
+    overflow-wrap: break-word;
+}
+
+.table table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table table thead {
+    background: var(--ui-primary);
+}
+
+    .table table thead th {
+        color: #ffffff;
+        padding-top: calc(0.5rem * var(--space-multiplier));
+        padding-bottom: calc(0.5rem * var(--space-multiplier));
+    }
+
+    .table table .filters th {
+        padding: calc(0.5rem * var(--space-multiplier));
+    }
+
+    .table table .column-filter.float {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .table table .column-filter.text {
+        display: block;
+    }
+
+    .table table tr.labels th {
+        position: relative;
+        padding: calc(0.55rem * var(--font-multiplier));
+    }
+
+    .table table tr.labels th .order {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .table table tbody tr:nth-child(2n):not(.loading):not(.loadmore):not(.nodata) {
+        background: #f0f2f5;
+    }
+
+    .table table tbody tr.hoverable {
+        cursor: pointer;
+    }
+
+        .table table tbody tr.hoverable:hover {
+            background: #dbdee5 !important;
+        }
+
+    .table table tbody tr.nodata td,
+    .table table tbody tr.loadmore td,
+    .table table tbody tr.loading td {
+        font-size: calc(2rem * var(--font-multiplier));
+        padding-top: calc(1.5rem * var(--space-multiplier));
+        width: 100%;
+        text-align: center;
+    }
+
+        .table table tbody tr.loadmore td .user-button {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .table table tbody tr.loadmore.working td .user-button svg {
+            animation: loading-spin 1s linear infinite;
+        }
+
+    .table table tbody tr.loading td svg {
+        animation: loading-spin 1s linear infinite;
+        color: var(--ui-primary);
+    }
+
+        @keyframes loading-spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(90deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+            75% {
+                transform: rotate(270deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }

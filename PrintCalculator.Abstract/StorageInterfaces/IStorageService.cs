@@ -1,4 +1,4 @@
-﻿using PrintCalculator.Abstract.Data.Storage;
+﻿using PrintCalculator.ViewModels.Data.Storage;
 using System;
 using System.Collections.Generic;
 using System.Linq;

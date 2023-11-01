@@ -1,4 +1,5 @@
-﻿using PrintCalculator.Data.Models.Paper;
+﻿using PrintCalculator.UI.Gen2.Data.Abstract;
+using PrintCalculator.Data.Models.Paper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace PrintCalculator.Data.Models.PostPrint
 {
-    public class PostPrintPrice
+    public class PostPrintPrice : Model
     {
-        public Guid Id { get; set; }
+        //public Guid Id { get; set; }
         public string Title { get; set; }
 
         public int MainPreparation { get; set; }

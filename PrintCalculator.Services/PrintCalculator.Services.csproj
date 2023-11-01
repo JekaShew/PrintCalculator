@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PrintCalculator.UI.Gen2\PrintCalculator.UI.Gen2.csproj" />
+
     <ProjectReference Include="..\PrintCalculator.Abstract\PrintCalculator.Abstract.csproj" />
     <ProjectReference Include="..\PrintCalculator.Data\PrintCalculator.Data.csproj" />
   </ItemGroup>

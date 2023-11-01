@@ -1,4 +1,5 @@
-﻿using PrintCalculator.Data.Models.Paper;
+﻿using PrintCalculator.UI.Gen2.Data.Abstract;
+using PrintCalculator.Data.Models.Paper;
 using PrintCalculator.Data.Models.Storage;
 using PrintCalculator.Data.Models.TechProcess;
 using System;
@@ -9,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace PrintCalculator.Data.Models.TechProcess
 {
-    public class TechProcess
+    public class TechProcess : Model
     {
-        public Guid Id { get; set; }
+        //public Guid Id { get; set; }
         public string Title { get; set; }
         public int Color { get; set; }
         public bool Special { get; set; }
@@ -67,14 +68,14 @@ namespace PrintCalculator.Data.Models.TechProcess
         public Guid PrintTypeId { get; set; }
         public Guid SectorId { get; set; }
         public Guid StorageId { get; set; }
-        public Guid FormatId { get; set; }
-        public Guid PreferredPaperSizeId { get; set; }
+        public Guid PaperFormatId { get; set; }
+        public Guid PaperSizeId { get; set; }
 
         public PrintType PrintType { get; set; }
         public Sector Sector { get; set; }
         public Storage.Storage Storage { get; set; }
         public PaperFormat PaperFormat {get;set;}
-        public PaperSize PrefferedPaperSize { get; set; }
+        public PaperSize PaperSize { get; set; }
 
         public List<PrintType> PrintTypes { get; set; }
         public List<Sector> Sectors { get; set; }
@@ -83,5 +84,6 @@ namespace PrintCalculator.Data.Models.TechProcess
         public List<PaperSize> PaperSizes { get; set; }
 
         public List<TechProcessOption> TechProcessOptions { get; set; }
+        //public List<Option> Options { get; set; }
     }
 }

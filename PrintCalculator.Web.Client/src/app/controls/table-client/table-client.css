@@ -1,0 +1,47 @@
+.table-client {
+
+}
+
+.table-client .header {
+    position: relative;
+    margin-bottom: calc(1rem * var(--space-multiplier));
+}
+
+.table-client .header .controls {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.table-client .header .controls button:not(:first-child) {
+    margin-left: calc(0.5rem * var(--space-multiplier));
+}
+
+.table-client .header .label {
+    width: 100%;
+    font-size: calc(2rem * var(--font-multiplier));
+    color: var(--cl-primary);
+    text-align: center;
+}
+
+.table-client table {
+    width: 100%;
+    table-layout: fixed;
+    overflow-wrap: break-word;
+}
+
+.table-client table thead {
+    background: #4495cf;
+}
+
+    .table-client table thead th {
+        color: #f7fcff;
+        padding-top: calc(0.5rem * var(--space-multiplier));
+        padding-bottom: calc(0.5rem * var(--space-multiplier));
+    }
+
+    .table-client table tbody tr:nth-child(2n) {
+        background: #f0f2f5;
+    }

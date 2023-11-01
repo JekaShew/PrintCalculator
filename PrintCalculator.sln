@@ -3,13 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrintCalculator", "PrintCalculator\PrintCalculator.csproj", "{F6D7A46D-E679-406D-AC76-C5836C160E52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrintCalculator.Web", "PrintCalculator.Web\PrintCalculator.Web.csproj", "{F6D7A46D-E679-406D-AC76-C5836C160E52}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrintCalculator.Data", "PrintCalculator.Data\PrintCalculator.Data.csproj", "{87593F42-D28C-4A21-8888-55B3E11AEFAE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrintCalculator.Abstract", "PrintCalculator.Abstract\PrintCalculator.Abstract.csproj", "{7069A86B-EBB8-4EA1-8B84-C6F765AFADB4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrintCalculator.Services", "PrintCalculator.Services\PrintCalculator.Services.csproj", "{CC143996-D2F3-4599-AD10-41709DF1B21F}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "PrintCalculator.Web.Client", "PrintCalculator.Web.Client\PrintCalculator.Web.Client.njsproj", "{683230A9-039E-45AA-9F62-FAD32CC58690}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7069A86B-EBB8-4EA1-8B84-C6F765AFADB4} = {7069A86B-EBB8-4EA1-8B84-C6F765AFADB4}
+		{CC143996-D2F3-4599-AD10-41709DF1B21F} = {CC143996-D2F3-4599-AD10-41709DF1B21F}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrintCalculator.UI.Gen2", "PrintCalculator.UI.Gen2\PrintCalculator.UI.Gen2.csproj", "{FE8111DF-B0C4-4F36-8B49-3868053DAFB3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrintCalculator.FileStorage", "PrintCalculator.FileStorage\PrintCalculator.FileStorage.csproj", "{C5F7C757-294E-450B-98DE-60CD340DC625}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrintCalculator.ViewModels", "PrintCalculator.ViewModels\PrintCalculator.ViewModels.csproj", "{5B6DACE0-D8FF-4EAC-AF96-23B293A36BEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +45,22 @@ Global
 		{CC143996-D2F3-4599-AD10-41709DF1B21F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC143996-D2F3-4599-AD10-41709DF1B21F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC143996-D2F3-4599-AD10-41709DF1B21F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{683230A9-039E-45AA-9F62-FAD32CC58690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{683230A9-039E-45AA-9F62-FAD32CC58690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{683230A9-039E-45AA-9F62-FAD32CC58690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{683230A9-039E-45AA-9F62-FAD32CC58690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE8111DF-B0C4-4F36-8B49-3868053DAFB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE8111DF-B0C4-4F36-8B49-3868053DAFB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE8111DF-B0C4-4F36-8B49-3868053DAFB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE8111DF-B0C4-4F36-8B49-3868053DAFB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5F7C757-294E-450B-98DE-60CD340DC625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5F7C757-294E-450B-98DE-60CD340DC625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5F7C757-294E-450B-98DE-60CD340DC625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5F7C757-294E-450B-98DE-60CD340DC625}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B6DACE0-D8FF-4EAC-AF96-23B293A36BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B6DACE0-D8FF-4EAC-AF96-23B293A36BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B6DACE0-D8FF-4EAC-AF96-23B293A36BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B6DACE0-D8FF-4EAC-AF96-23B293A36BEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

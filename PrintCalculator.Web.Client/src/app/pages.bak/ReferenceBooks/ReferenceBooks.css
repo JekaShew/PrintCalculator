@@ -1,0 +1,39 @@
+.referenceBooks
+{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    background-color:white;
+    margin-left: 5rem;
+    padding: 3rem 2rem 4rem 2rem;
+}
+
+.referenceBookGroup {
+    width: 40%;
+    margin:1rem;
+    display: flex;
+    flex-direction: column;
+    border:solid;
+}
+
+.refferenceBookTitle{
+    width:100%;
+    font-size:1rem;
+    text-align:center;
+    margin:0.5rem 0;
+}
+
+.refferenceBookGroupBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.refferenceBookBtn{
+    justify-content:center;
+    margin:0.5rem auto;
+    width:70%;
+    text-align:center;
+    padding:0.5rem 1rem;
+    border:solid;
+}

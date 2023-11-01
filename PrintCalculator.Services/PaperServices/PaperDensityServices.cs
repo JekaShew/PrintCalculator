@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.Paper;
+using PrintCalculator.ViewModels.Data.Paper;
 using PrintCalculator.Abstract.PaperInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -53,7 +53,7 @@ namespace PrintCalculator.Services.PaperServices
         {
             var paperDensity = await _appDBContext.PaperDensities.FirstOrDefaultAsync(pd => pd.Id == updatedPaperDensity.Id);
 
-            paperDensity.Id = updatedPaperDensity.Id;
+            paperDensity.Id = updatedPaperDensity.Id.Value;
             paperDensity.Density = updatedPaperDensity.Density;
 
             await _appDBContext.SaveChangesAsync();

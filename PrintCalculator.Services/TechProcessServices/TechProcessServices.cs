@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.TechProcess;
+using PrintCalculator.ViewModels.Data.TechProcess;
 using PrintCalculator.Abstract.TechProcessInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -29,13 +29,13 @@ namespace PrintCalculator.Services.TechProcessServices
             newTechProcess.Sector = null;
             newTechProcess.Storage = null;
             newTechProcess.PaperFormat = null;
-            newTechProcess.PrefferedPaperSize = null;
+            newTechProcess.PaperSize = null;
 
             _appDBContext.TechProcessOptions.AddRange(techProcess.TechProcessOptions.Select(tpo => new Data.Models.TechProcess.TechProcessOption
             {
-                Id = tpo.Id,
-                TechProcessId = techProcess.Id,
-                OptionId = tpo.Option.Id,
+                Id = tpo.Id.Value,
+                TechProcessId = techProcess.Id.Value,
+                OptionId = tpo.Option.VM.Id.Value,
             }));
 
             await _appDBContext.AddAsync(newTechProcess);
@@ -52,7 +52,7 @@ namespace PrintCalculator.Services.TechProcessServices
         {
             var techProcesses = _mapper.Map<List<TechProcess>>(await _appDBContext.TechProcesses.AsNoTracking()
                                                                         .Include(tpo=> tpo.TechProcessOptions)
-                                                                            .ThenInclude(o=> o.Options)
+                                                                            .ThenInclude(o=> o.Option)
                                                                         .Include(pt=> pt.PrintTypes)
                                                                         .Include(s=> s.Sectors)
                                                                         .Include(st=> st.Storages)
@@ -67,7 +67,7 @@ namespace PrintCalculator.Services.TechProcessServices
         {
             var techProcess = _mapper.Map<TechProcess>(await _appDBContext.TechProcesses.AsNoTracking()
                                                                 .Include(tpo => tpo.TechProcessOptions)
-                                                                    .ThenInclude(o => o.Options)
+                                                                    .ThenInclude(o => o.Option)
                                                                 .Include(pt => pt.PrintTypes)
                                                                 .Include(s => s.Sectors)
                                                                 .Include(st => st.Storages)
@@ -82,7 +82,7 @@ namespace PrintCalculator.Services.TechProcessServices
         {
             var techProcess = await _appDBContext.TechProcesses.FirstOrDefaultAsync(tp => tp.Id == updatedTechProcess.Id);
 
-            techProcess.Id = updatedTechProcess.Id;
+            techProcess.Id = updatedTechProcess.Id.Value;
             techProcess.Title = updatedTechProcess.Title;
 
             techProcess.Color = updatedTechProcess.Color;
@@ -133,17 +133,17 @@ namespace PrintCalculator.Services.TechProcessServices
             techProcess.FittingCoefficientForYourTurnOver = updatedTechProcess.FittingCoefficientForYourTurnOver;
             techProcess.Rewash = updatedTechProcess.Rewash;
 
-            techProcess.PrintTypeId = updatedTechProcess.PrintType.Id;
-            techProcess.SectorId = updatedTechProcess.Sector.Id;
-            techProcess.StorageId = updatedTechProcess.Storage.Id;
-            techProcess.FormatId = updatedTechProcess.PaperFormat.Id;
-            techProcess.PreferredPaperSizeId = updatedTechProcess.PrefferedPaperSize.Id;
+            techProcess.PrintTypeId = updatedTechProcess.PrintType.VM.Id.Value;
+            techProcess.SectorId = updatedTechProcess.Sector.VM.Id.Value;
+            techProcess.StorageId = updatedTechProcess.Storage.VM.Id.Value;
+            techProcess.PaperFormatId = updatedTechProcess.PaperFormat.VM.Id.Value;
+            techProcess.PaperSizeId = updatedTechProcess.PaperSize.VM.Id.Value;
 
             techProcess.PrintType = null;
             techProcess.Sector = null;
             techProcess.Storage = null;
             techProcess.PaperFormat = null;
-            techProcess.PrefferedPaperSize = null;
+            techProcess.PaperSize = null;
 
             _appDBContext.TechProcessOptions.RemoveRange(techProcess.TechProcessOptions);
             var techProcessOptions = new List<Data.Models.TechProcess.TechProcessOption>();

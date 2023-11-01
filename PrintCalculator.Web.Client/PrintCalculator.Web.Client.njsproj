@@ -1,0 +1,455 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>PrintCalculator.Web.Client</Name>
+    <RootNamespace>PrintCalculator.Web.Client</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>683230a9-039e-45aa-9f62-fad32cc58690</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>
+    </StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="package.json" />
+    <Content Include="public\index.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="README.md" />
+    <Content Include="src\apiMiddleware.js" />
+    <Content Include="src\app\app.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\controls\button\button.css" />
+    <Content Include="src\app\controls\button\button.js" />
+    <Content Include="src\app\controls\form\crud-form.js" />
+    <Content Include="src\app\controls\form\details-form.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\controls\form\form.css" />
+    <Content Include="src\app\controls\form\form.js" />
+    <Content Include="src\app\controls\input-date\input-date.css" />
+    <Content Include="src\app\controls\input-date\input-date.js" />
+    <Content Include="src\app\controls\input-float\input-float.css" />
+    <Content Include="src\app\controls\input-float\input-float.js" />
+    <Content Include="src\app\controls\input-int\input-int.css" />
+    <Content Include="src\app\controls\input-int\input-int.js" />
+    <Content Include="src\app\controls\input-media\input-media.css" />
+    <Content Include="src\app\controls\input-media\input-media.js" />
+    <Content Include="src\app\controls\input-object\input-object.css" />
+    <Content Include="src\app\controls\input-object\input-object.js" />
+    <Content Include="src\app\controls\input-password\input-password.css" />
+    <Content Include="src\app\controls\input-password\input-password.js" />
+    <Content Include="src\app\controls\input-readonly\input-readonly.css" />
+    <Content Include="src\app\controls\input-readonly\input-readonly.js" />
+    <Content Include="src\app\controls\input-roles\input-roles.css" />
+    <Content Include="src\app\controls\input-roles\input-roles.js" />
+    <Content Include="src\app\controls\input-table\input-table.css" />
+    <Content Include="src\app\controls\input-table\input-table.js" />
+    <Content Include="src\app\controls\input-text\input-text.css" />
+    <Content Include="src\app\controls\input-text\input-text.js" />
+    <Content Include="src\app\controls\table-client\table-client.css" />
+    <Content Include="src\app\controls\table-client\table-client.js" />
+    <Content Include="src\app\controls\table\columnFilterRender.js" />
+    <Content Include="src\app\controls\table\table.css" />
+    <Content Include="src\app\controls\table\table.js" />
+    <Content Include="src\app\controls\tabs\tabs.css" />
+    <Content Include="src\app\controls\tabs\tabs.js" />
+    <Content Include="src\app\controls\ui\ui.css" />
+    <Content Include="src\app\controls\ui\ui.js" />
+    <Content Include="src\app\dataModels.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\PaperClass\actions.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\PaperClass\PaperClass.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\PaperClass\PaperClass.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\PaperClass\reducer.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\PaperCoefficient\actions.js" />
+    <Content Include="src\app\pages\Paper\PaperCoefficient\PaperCoefficient.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\PaperCoefficient\PaperCoefficient.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\PaperCoefficient\reducer.js" />
+    <Content Include="src\app\pages\Paper\PaperDensity\actions.js" />
+    <Content Include="src\app\pages\Paper\PaperDensity\PaperDensity.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\PaperDensity\PaperDensity.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\PaperDensity\reducer.js" />
+    <Content Include="src\app\pages\Paper\PaperFormat\actions.js" />
+    <Content Include="src\app\pages\Paper\PaperFormat\PaperFormat.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\PaperFormat\PaperFormat.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\PaperFormat\reducer.js" />
+    <Content Include="src\app\pages\Paper\PaperPriceGroup\actions.js" />
+    <Content Include="src\app\pages\Paper\PaperPriceGroup\PaperPriceGroup.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\PaperPriceGroup\PaperPriceGroup.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\PaperPriceGroup\reducer.js" />
+    <Content Include="src\app\pages\Paper\PaperSize\actions.js" />
+    <Content Include="src\app\pages\Paper\PaperSize\PaperSize.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\PaperSize\PaperSize.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\PaperSize\reducer.js" />
+    <Content Include="src\app\pages\Paper\PaperType\actions.js" />
+    <Content Include="src\app\pages\Paper\PaperType\PaperType.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\PaperType\PaperType.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\PaperType\reducer.js" />
+    <Content Include="src\app\pages\Paper\Paper\actions.js" />
+    <Content Include="src\app\pages\Paper\Paper\Paper.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\Paper\Paper.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Paper\Paper\reducer.js" />
+    <Content Include="src\app\pages\PostPrint\PackagingType\actions.js" />
+    <Content Include="src\app\pages\PostPrint\PackagingType\PackagingType.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\PostPrint\PackagingType\PackagingType.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\PostPrint\PackagingType\reducer.js" />
+    <Content Include="src\app\pages\PostPrint\PostPrintGroup\actions.js" />
+    <Content Include="src\app\pages\PostPrint\PostPrintGroup\PostPrintGroup.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\PostPrint\PostPrintGroup\PostPrintGroup.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\PostPrint\PostPrintGroup\reducer.js" />
+    <Content Include="src\app\pages\PostPrint\PostPrintOperation\actions.js" />
+    <Content Include="src\app\pages\PostPrint\PostPrintOperation\PostPrintOperation.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\PostPrint\PostPrintOperation\PostPrintOperation.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\PostPrint\PostPrintOperation\reducer.js" />
+    <Content Include="src\app\pages\PostPrint\PostPrintPriceGroup\actions.js" />
+    <Content Include="src\app\pages\PostPrint\PostPrintPriceGroup\PostPrintPriceGroup.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\PostPrint\PostPrintPriceGroup\PostPrintPriceGroup.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\PostPrint\PostPrintPriceGroup\reducer.js" />
+    <Content Include="src\app\pages\PostPrint\PostPrintPrice\actions.js" />
+    <Content Include="src\app\pages\PostPrint\PostPrintPrice\PostPrintPrice.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\PostPrint\PostPrintPrice\PostPrintPrice.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\PostPrint\PostPrintPrice\reducer.js" />
+    <Content Include="src\app\pages\PostPrint\PostPrintTarget\actions.js" />
+    <Content Include="src\app\pages\PostPrint\PostPrintTarget\PostPrintTarget.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\PostPrint\PostPrintTarget\PostPrintTarget.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\PostPrint\PostPrintTarget\reducer.js" />
+    <Content Include="src\app\pages\ReferenceBooks\ReferenceBooks.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\ReferenceBooks\ReferenceBooks.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Storage\Category\actions.js" />
+    <Content Include="src\app\pages\Storage\Category\Category.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Storage\Category\Category.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Storage\Category\reducer.js" />
+    <Content Include="src\app\pages\Storage\StorageProduct\actions.js" />
+    <Content Include="src\app\pages\Storage\StorageProduct\reducer.js" />
+    <Content Include="src\app\pages\Storage\StorageProduct\StorageProduct.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Storage\StorageProduct\StorageProduct.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Storage\Storage\actions.js" />
+    <Content Include="src\app\pages\Storage\Storage\reducer.js" />
+    <Content Include="src\app\pages\Storage\Storage\Storage.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Storage\Storage\Storage.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Storage\SubCategory\actions.js" />
+    <Content Include="src\app\pages\Storage\SubCategory\reducer.js" />
+    <Content Include="src\app\pages\Storage\SubCategory\SubCategory.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Storage\SubCategory\SubCategory.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Storage\UnitMeasure\actions.js" />
+    <Content Include="src\app\pages\Storage\UnitMeasure\reducer.js" />
+    <Content Include="src\app\pages\Storage\UnitMeasure\UnitMeasure.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Storage\UnitMeasure\UnitMeasure.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\TechProcess\Option\actions.js" />
+    <Content Include="src\app\pages\TechProcess\Option\Option.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\TechProcess\Option\Option.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\TechProcess\Option\reducer.js" />
+    <Content Include="src\app\pages\TechProcess\PrintType\actions.js" />
+    <Content Include="src\app\pages\TechProcess\PrintType\PrintType.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\TechProcess\PrintType\PrintType.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\TechProcess\PrintType\reducer.js" />
+    <Content Include="src\app\pages\TechProcess\Sector\actions.js" />
+    <Content Include="src\app\pages\TechProcess\Sector\reducer.js" />
+    <Content Include="src\app\pages\TechProcess\Sector\Sector.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\TechProcess\Sector\Sector.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\TechProcess\TechProcessOption\actions.js" />
+    <Content Include="src\app\pages\TechProcess\TechProcessOption\reducer.js" />
+    <Content Include="src\app\pages\TechProcess\TechProcessOption\TechProcessOption.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\TechProcess\TechProcessOption\TechProcessOption.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\TechProcess\TechProcess\actions.js" />
+    <Content Include="src\app\pages\TechProcess\TechProcess\reducer.js" />
+    <Content Include="src\app\pages\TechProcess\TechProcess\TechProcess.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\TechProcess\TechProcess\TechProcess.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Wrapper\Wrapper.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\pages\Wrapper\Wrapper.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\app\service\authorization\actions.js" />
+    <Content Include="src\app\service\authorization\middleware.js" />
+    <Content Include="src\app\service\authorization\reducer.js" />
+    <Content Include="src\app\service\autocomplete\employee\autocomplete-employee.css" />
+    <Content Include="src\app\service\autocomplete\employee\autocomplete-employee.js" />
+    <Content Include="src\app\service\autocomplete\field\autocomplete-field.css" />
+    <Content Include="src\app\service\autocomplete\field\autocomplete-field.js" />
+    <Content Include="src\app\service\autocomplete\string\autocomplete-string.css" />
+    <Content Include="src\app\service\autocomplete\string\autocomplete-string.js" />
+    <Content Include="src\app\service\autocomplete\unit\autocomplete-unit.css" />
+    <Content Include="src\app\service\autocomplete\unit\autocomplete-unit.js" />
+    <Content Include="src\app\service\data-models\data-models.js" />
+    <Content Include="src\app\service\dialog\actions.js" />
+    <Content Include="src\app\service\dialog\dialog-simple.js" />
+    <Content Include="src\app\service\dialog\dialog.css" />
+    <Content Include="src\app\service\dialog\dialog.js" />
+    <Content Include="src\app\service\dialog\reducer.js" />
+    <Content Include="src\app\service\dialog\service.js" />
+    <Content Include="src\app\service\logout\logout.js" />
+    <Content Include="src\app\service\map-widget\map-widget.js" />
+    <Content Include="src\app\service\media\media.js" />
+    <Content Include="src\app\service\not-authorized\not-authorized.js" />
+    <Content Include="src\app\service\notifications\actions.js" />
+    <Content Include="src\app\service\notifications\notifications.css" />
+    <Content Include="src\app\service\notifications\notifications.js" />
+    <Content Include="src\app\service\notifications\reducer.js" />
+    <Content Include="src\app\service\notifications\service.js" />
+    <Content Include="src\app\service\remote\api-middleware.js" />
+    <Content Include="src\app\service\remote\api-service.js" />
+    <Content Include="src\app\service\utils\utils.js" />
+    <Content Include="src\app\service\widget\widget.css" />
+    <Content Include="src\app\service\widget\widget.js" />
+    <Content Include="src\app\service\wrapper\wrapper.css" />
+    <Content Include="src\app\service\wrapper\wrapper.js" />
+    <Content Include="src\config.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\index.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\index.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\initialState.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\reducers.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\store.js">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="public\" />
+    <Folder Include="src\" />
+    <Folder Include="src\app\" />
+    <Folder Include="src\app\pages\Calculation\" />
+    <Folder Include="src\app\controls\" />
+    <Folder Include="src\app\controls\button\" />
+    <Folder Include="src\app\controls\form\" />
+    <Folder Include="src\app\controls\input-date\" />
+    <Folder Include="src\app\controls\input-float\" />
+    <Folder Include="src\app\controls\input-int\" />
+    <Folder Include="src\app\controls\input-media\" />
+    <Folder Include="src\app\controls\input-object\" />
+    <Folder Include="src\app\controls\input-password\" />
+    <Folder Include="src\app\controls\input-readonly\" />
+    <Folder Include="src\app\controls\input-roles\" />
+    <Folder Include="src\app\controls\input-table\" />
+    <Folder Include="src\app\controls\input-text\" />
+    <Folder Include="src\app\controls\table-client\" />
+    <Folder Include="src\app\controls\table\" />
+    <Folder Include="src\app\controls\tabs\" />
+    <Folder Include="src\app\controls\ui\" />
+    <Folder Include="src\app\pages\" />
+    <Folder Include="src\app\pages\Order\" />
+    <Folder Include="src\app\pages\ReferenceBooks\" />
+    <Folder Include="src\app\pages\Paper\PaperType\" />
+    <Folder Include="src\app\pages\Paper\PaperSize\" />
+    <Folder Include="src\app\pages\Paper\PaperPriceGroup\" />
+    <Folder Include="src\app\pages\Paper\PaperFormat\" />
+    <Folder Include="src\app\pages\Paper\PaperDensity\" />
+    <Folder Include="src\app\pages\Paper\PaperCoefficient\" />
+    <Folder Include="src\app\pages\Paper\PaperClass\" />
+    <Folder Include="src\app\pages\Paper\Paper\" />
+    <Folder Include="src\app\pages\PostPrint\PostPrintTarget\" />
+    <Folder Include="src\app\pages\PostPrint\PostPrintPriceGroup\" />
+    <Folder Include="src\app\pages\PostPrint\PostPrintPrice\" />
+    <Folder Include="src\app\pages\PostPrint\PostPrintOperation\" />
+    <Folder Include="src\app\pages\PostPrint\PostPrintGroup\" />
+    <Folder Include="src\app\pages\PostPrint\PackagingType\" />
+    <Folder Include="src\app\pages\Storage\Category\" />
+    <Folder Include="src\app\pages\Storage\UnitMeasure\" />
+    <Folder Include="src\app\pages\Storage\Storage\" />
+    <Folder Include="src\app\pages\Storage\StorageProduct\" />
+    <Folder Include="src\app\pages\Storage\SubCategory\" />
+    <Folder Include="src\app\pages\TechProcess\TechProcessOption\" />
+    <Folder Include="src\app\pages\TechProcess\TechProcess\" />
+    <Folder Include="src\app\pages\TechProcess\Sector\" />
+    <Folder Include="src\app\pages\TechProcess\PrintType\" />
+    <Folder Include="src\app\pages\TechProcess\Option\" />
+    <Folder Include="src\app\pages\Wrapper\" />
+    <Folder Include="src\app\pages\User\" />
+    <Folder Include="src\app\pages\PostPrint\" />
+    <Folder Include="src\app\pages\Paper\" />
+    <Folder Include="src\app\pages\TechProcess\" />
+    <Folder Include="src\app\pages\Storage\" />
+    <Folder Include="src\app\service\" />
+    <Folder Include="src\app\service\authorization\" />
+    <Folder Include="src\app\service\autocomplete\" />
+    <Folder Include="src\app\service\autocomplete\employee\" />
+    <Folder Include="src\app\service\autocomplete\field\" />
+    <Folder Include="src\app\service\autocomplete\string\" />
+    <Folder Include="src\app\service\autocomplete\unit\" />
+    <Folder Include="src\app\service\data-models\" />
+    <Folder Include="src\app\service\dialog\" />
+    <Folder Include="src\app\service\logout\" />
+    <Folder Include="src\app\service\map-widget\" />
+    <Folder Include="src\app\service\media\" />
+    <Folder Include="src\app\service\not-authorized\" />
+    <Folder Include="src\app\service\notifications\" />
+    <Folder Include="src\app\service\remote\" />
+    <Folder Include="src\app\service\utils\" />
+    <Folder Include="src\app\service\widget\" />
+    <Folder Include="src\app\service\wrapper\" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

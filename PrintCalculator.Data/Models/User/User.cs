@@ -1,5 +1,4 @@
-﻿using PrintCalculator.Abstract.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,4 +15,6 @@ namespace PrintCalculator.Data.Models.User
         public string JobTitle { get; set; }
         public Role Role { get; set; }
     }
+    public enum Role { MainAdmin, Admin, Administrator, Worker }
+
 }

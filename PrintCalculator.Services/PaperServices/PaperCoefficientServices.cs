@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.Paper;
+using PrintCalculator.ViewModels.Data.Paper;
 using PrintCalculator.Abstract.PaperInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -61,11 +61,11 @@ namespace PrintCalculator.Services.PaperServices
         {
             var paperCoefficient = await _appDBContext.PaperCoefficients.FirstOrDefaultAsync(pc => pc.Id == updatedPaperCoefficient.Id);
 
-            paperCoefficient.Id = updatedPaperCoefficient.Id;
+            paperCoefficient.Id = updatedPaperCoefficient.Id.Value;
             paperCoefficient.Title = updatedPaperCoefficient.Title;
             paperCoefficient.Coefficient = updatedPaperCoefficient.Coefficient;
-            paperCoefficient.TechProcessId = updatedPaperCoefficient.TechProcess.Id;
-            paperCoefficient.PaperDensityId = updatedPaperCoefficient.PaperDensity.Id;
+            paperCoefficient.TechProcessId = updatedPaperCoefficient.TechProcess.VM.Id.Value;
+            paperCoefficient.PaperDensityId = updatedPaperCoefficient.PaperDensity.VM.Id.Value;
 
             paperCoefficient.TechProcess = null;
             paperCoefficient.PaperDensity = null;

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.PostPrint;
+using PrintCalculator.ViewModels.Data.PostPrint;
 using PrintCalculator.Abstract.PostPrintInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -53,7 +53,7 @@ namespace PrintCalculator.Services.PostPrintServices
         {
             var packagingType = await _appDBContext.PackagingTypes.FirstOrDefaultAsync(pt => pt.Id == updatedPackagingType.Id);
 
-            packagingType.Id = updatedPackagingType.Id;
+            packagingType.Id = updatedPackagingType.Id.Value;
             packagingType.Title = updatedPackagingType.Title;
             packagingType.PreparationPrice = updatedPackagingType.PreparationPrice;
             packagingType.PerPackPrice = updatedPackagingType.PerPackPrice;

@@ -1,0 +1,57 @@
+.notifications {
+    position: fixed;
+    z-index: 2000;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    pointer-events: none;
+}
+
+    .notifications > .items {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        padding: calc(2rem * var(--space-multiplier));
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .notifications > .items > .item {
+        background: #ffffff;
+        margin: calc(1rem * var(--space-multiplier));
+        box-shadow: 2px 2px 8px #000000;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        max-width: calc(48rem * var(--space-multiplier));
+        pointer-events: all;
+    }
+
+        .notifications > .items > .item > .widget {
+            width: 100%;
+        }
+
+            .notifications > .items > .item > .widget > .header {
+                margin-bottom: calc(1rem * var(--space-multiplier));
+                min-width: calc(16rem * var(--space-multiplier));
+            }
+
+        .notifications > .items > .item > .icon {
+            padding: calc(2rem * var(--space-multiplier));
+            padding-right: 0;
+            font-size: calc(3rem * var(--font-multiplier));
+        }
+
+        .notifications > .items > .item.no-content > .widget > .header {
+            margin-bottom: 0;
+        }
+
+        .notifications > .items > .item.no-content > .icon {
+            font-size: calc(2rem * var(--font-multiplier));
+        }

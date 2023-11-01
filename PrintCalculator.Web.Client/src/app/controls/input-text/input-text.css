@@ -1,0 +1,64 @@
+.input-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputText-readOnly {
+    width: 30%;
+    background-color: brown;
+    color: white;
+}
+
+.inputText {
+    width: 38%;
+    font-size: calc(1.2rem * var(--font-multiplier));
+}
+
+.input-text .inputDiv {
+    width: 25%;
+   
+    margin: 0.5rem 1%;
+}
+
+.input-text .label {
+    margin-left: 3%;
+    width: 60%;
+    height: 100%;
+    font-size: calc(1.5rem * var(--font-multiplier));
+    font-weight: 500;
+}
+
+    .input-text input {
+        border: 1.5px solid var(--ui-dark);
+        font-size: calc(1.5rem * var(--font-multiplier));
+        outline: none;
+        padding: calc(0.5rem * var(--space-multiplier));
+        line-height: calc(1.5rem * var(--font-multiplier));
+    }
+
+        .input-text input:active,
+        .input-text input:focus {
+            border: 1.5px solid var(--ui-primary);
+        }
+
+    .input-text.x1 input {
+        width: 100%;
+    }
+
+    .input-text.x2 input {
+        width: 66%;
+    }
+
+    .input-text.x3 input {
+        width: 33%;
+    }
+
+    .input-text.x3 .label {
+        width: 66%;
+    }
+
+    .input-text.error input {
+        border: 1.5px solid var(--ui-error);
+    }

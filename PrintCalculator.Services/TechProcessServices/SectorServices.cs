@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.TechProcess;
+using PrintCalculator.ViewModels.Data.TechProcess;
 using PrintCalculator.Abstract.TechProcessInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -53,7 +53,7 @@ namespace PrintCalculator.Services.TechProcessServices
         {
             var sector = await _appDBContext.Sectors.FirstOrDefaultAsync(s => s.Id == updatedSector.Id);
 
-            sector.Id = updatedSector.Id;
+            sector.Id = updatedSector.Id.Value;
             sector.Title = updatedSector.Title;
 
             await _appDBContext.SaveChangesAsync();

@@ -1,4 +1,4 @@
-﻿using PrintCalculator.Abstract.Data.TechProcess;
+﻿using PrintCalculator.ViewModels.Data.TechProcess;
 using System;
 using System.Collections.Generic;
 using System.Linq;

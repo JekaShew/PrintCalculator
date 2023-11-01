@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.Paper;
+using PrintCalculator.ViewModels.Data.Paper;
 using PrintCalculator.Abstract.PaperInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -67,7 +67,7 @@ namespace PrintCalculator.Services.PaperServices
         {
             var paper = await _appDBContext.Papers.FirstOrDefaultAsync(p => p.Id == updatedPaper.Id);
 
-            paper.Id = updatedPaper.Id;
+            paper.Id = updatedPaper.Id.Value;
             paper.Title = updatedPaper.Title;
             paper.TitleOnStorage = updatedPaper.TitleOnStorage;
             paper.Price = updatedPaper.Price;
@@ -78,10 +78,10 @@ namespace PrintCalculator.Services.PaperServices
             paper.PriceKg = updatedPaper.PriceKg;
             paper.SuspendedSupply = updatedPaper.SuspendedSupply;
 
-            paper.PaperTypeId = updatedPaper.PaperType.Id;
-            paper.PaperPriceGroupId = updatedPaper.PaperPriceGroup.Id;
-            paper.PaperDensityId = updatedPaper.PaperDensity.Id;
-            paper.PaperSizeId = updatedPaper.PaperSize.Id;
+            paper.PaperTypeId = updatedPaper.PaperType.VM.Id.Value;
+            paper.PaperPriceGroupId = updatedPaper.PaperPriceGroup.VM.Id.Value;
+            paper.PaperDensityId = updatedPaper.PaperDensity.VM.Id.Value;
+            paper.PaperSizeId = updatedPaper.PaperSize.VM.Id.Value;
 
             paper.PaperType = null;
             paper.PaperPriceGroup = null;

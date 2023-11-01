@@ -1,0 +1,48 @@
+.user-button {
+    font-size: calc(1.5rem * var(--font-multiplier));
+    padding-top: calc(0.5rem * var(--space-multiplier));
+    padding-bottom: calc(0.5rem * var(--space-multiplier));
+    padding-left: calc(1rem * var(--space-multiplier));
+    padding-right: calc(1rem * var(--space-multiplier));
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-button svg {
+    /*height: calc(1.5rem * var(--font-multiplier));
+    display: block;*/
+}
+
+.user-button span {
+    display: block;
+}
+
+    .user-button.loading svg {
+        animation: spin 1s linear;
+        animation-iteration-count: infinite;
+    }
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

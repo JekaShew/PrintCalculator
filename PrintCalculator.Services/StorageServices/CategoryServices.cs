@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.Storage;
+using PrintCalculator.ViewModels.Data.Storage;
 using PrintCalculator.Abstract.StorageInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -53,7 +53,7 @@ namespace PrintCalculator.Services.StorageServices
         {
             var category = await _appDBContext.Categories.FirstOrDefaultAsync(c=> c.Id == updatedCategory.Id);
 
-            category.Id = updatedCategory.Id;
+            category.Id = updatedCategory.Id.Value;
             category.Title = updatedCategory.Title;
 
             await _appDBContext.SaveChangesAsync();

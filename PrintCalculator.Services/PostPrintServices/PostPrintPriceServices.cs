@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.PostPrint;
+using PrintCalculator.ViewModels.Data.PostPrint;
 using PrintCalculator.Abstract.PostPrintInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -65,10 +65,10 @@ namespace PrintCalculator.Services.PostPrintServices
         {
             var postPrintPrice = await _appDBContext.PostPrintPrices.FirstOrDefaultAsync(ppp => ppp.Id == updatedPostPrintPrice.Id);
 
-            postPrintPrice.PostPrintPriceGroupId = updatedPostPrintPrice.PostPrintPriceGroup.Id;
-            postPrintPrice.MainPostPrintTargetId = updatedPostPrintPrice.MainPostPrintTarget.Id;
-            postPrintPrice.AdditionalPostPrintTargetId = updatedPostPrintPrice.AdditionalPostPrintTarget.Id;
-            postPrintPrice.PaperFormatId = updatedPostPrintPrice.PaperFormat.Id;
+            postPrintPrice.PostPrintPriceGroupId = updatedPostPrintPrice.PostPrintPriceGroup.VM.Id.Value;
+            postPrintPrice.MainPostPrintTargetId = updatedPostPrintPrice.MainPostPrintTarget.VM.Id.Value;
+            postPrintPrice.AdditionalPostPrintTargetId = updatedPostPrintPrice.AdditionalPostPrintTarget.VM.Id.Value;
+            postPrintPrice.PaperFormatId = updatedPostPrintPrice.PaperFormat.VM.Id.Value;
 
             postPrintPrice.PostPrintPriceGroup = null;
             postPrintPrice.MainPostPrintTarget = null;

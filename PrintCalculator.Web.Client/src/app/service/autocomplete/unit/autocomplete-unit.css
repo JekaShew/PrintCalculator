@@ -1,0 +1,28 @@
+.autocomplete-unit {
+    display: flex;
+    flex-direction: row;
+}
+
+    .autocomplete-unit .left {
+        margin-right: calc(1rem * var(--space-multiplier));
+    }
+
+        .autocomplete-unit .left img {
+            height: calc(4rem * var(--font-multiplier));
+            width: calc(4rem * var(--font-multiplier));
+            border-radius: 1000px;
+        }
+
+    .autocomplete-unit .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+        .autocomplete-unit .right .top {
+            font-weight: 600;
+        }
+
+        .autocomplete-unit .right .bottom {
+            font-size: calc(1.25rem * var(--font-multiplier));
+        }

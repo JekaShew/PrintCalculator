@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.PostPrint;
+using PrintCalculator.ViewModels.Data.PostPrint;
 using PrintCalculator.Abstract.PostPrintInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -53,7 +53,7 @@ namespace PrintCalculator.Services.PostPrintServices
         {
             var postPrintGroup = await _appDBContext.PostPrintGroups.FirstOrDefaultAsync(ppg => ppg.Id == updatedPostPrintGroup.Id);
 
-            postPrintGroup.Id = updatedPostPrintGroup.Id;
+            postPrintGroup.Id = updatedPostPrintGroup.Id.Value;
             postPrintGroup.Title = updatedPostPrintGroup.Title;
 
             await _appDBContext.SaveChangesAsync();

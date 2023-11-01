@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.TechProcess;
+using PrintCalculator.ViewModels.Data.TechProcess;
 using PrintCalculator.Abstract.TechProcessInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -41,8 +41,8 @@ namespace PrintCalculator.Services.TechProcessServices
         public async Task<List<TechProcessOption>> TakeTechProcessOptions()
         {
             var techProcessOptions = _mapper.Map<List<TechProcessOption>>(await _appDBContext.TechProcessOptions.AsNoTracking()
-                                                                                   .Include(o=> o.Options)
-                                                                                   .Include(tp=> tp.TechProcesses)
+                
+                                                                                    .Include(tpo => tpo.TechProcess)
                                                                                    .ToListAsync());
 
             return techProcessOptions;
@@ -51,8 +51,7 @@ namespace PrintCalculator.Services.TechProcessServices
         public async Task<TechProcessOption> TakeTechProcessOptionById(Guid id)
         {
             var techProcessOption = _mapper.Map<TechProcessOption>(await _appDBContext.TechProcessOptions.AsNoTracking()
-                                                                            .Include(o=> o.Options)
-                                                                            .Include(tp=> tp.TechProcesses)
+                                                                            .Include(tpo => tpo.TechProcess)
                                                                             .FirstOrDefaultAsync(tpo => tpo.Id == id));
             return techProcessOption;
         }
@@ -61,9 +60,9 @@ namespace PrintCalculator.Services.TechProcessServices
         {
             var techProcessOption = await _appDBContext.TechProcessOptions.FirstOrDefaultAsync(tpo => tpo.Id == updatedTechProcessOption.Id);
 
-            techProcessOption.Id = updatedTechProcessOption.Id;
-            techProcessOption.OptionId = updatedTechProcessOption.Option.Id;
-            techProcessOption.TechProcessId = updatedTechProcessOption.TechProcess.Id;
+            techProcessOption.Id = updatedTechProcessOption.Id.Value;
+            techProcessOption.OptionId = updatedTechProcessOption.Option.VM.Id.Value;
+            techProcessOption.TechProcessId = updatedTechProcessOption.TechProcess.VM.Id.Value;
             techProcessOption.Option = null;
             techProcessOption.TechProcess = null;
 

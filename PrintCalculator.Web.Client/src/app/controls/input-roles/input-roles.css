@@ -1,0 +1,59 @@
+.input-roles {
+    width: 100%;
+}
+
+    .input-roles .label {
+        text-align: center;
+        font-size: calc(1.5rem * var(--font-multiplier));
+        font-weight: 400;
+    }
+
+    .input-roles table {
+        margin-top: calc(1rem * var(--space-multiplier));
+        width: 100%;
+        font-size: calc(1.5rem * var(--font-multiplier));
+        font-weight: 400;
+    }
+
+        .input-roles table thead th {
+            background: var(--ui-primary);
+            color: #ffffff;
+            font-weight: 400;
+            padding-top: calc(0.5rem * var(--space-multiplier));
+            padding-bottom: calc(0.5rem * var(--space-multiplier));
+        }
+
+        .input-roles table tr:nth-child(2n) {
+            background: #f0f2f5;
+        }
+
+        .input-roles table td:nth-child(1) {
+            text-align: left;
+            width: 25%;
+        }
+
+        .input-roles table td:not(:nth-child(1)) {
+            text-align: center;
+            width: 15%;
+        }
+
+            .input-roles table td:not(:nth-child(1)) .checkbox {
+                margin-top: calc(0.5rem * var(--space-multiplier));
+                margin-bottom: calc(0.5rem * var(--space-multiplier));
+                background: #ffffff;
+                cursor: pointer;
+                border: 1.5px solid var(--ui-dark);
+                font-size: calc(1.5rem * var(--font-multiplier));
+                font-weight: 600;
+                color: var(--ui-primary);
+                padding: calc(0.25rem * var(--space-multiplier));
+                width: calc(0.25rem * var(--space-multiplier) + 1.5rem * var(--font-multiplier) + 3px);
+                height: calc(0.25rem * var(--space-multiplier) + 1.5rem * var(--font-multiplier) + 3px);
+                display: inline-flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+                .input-roles table td:not(:nth-child(1)) .checkbox.checked {
+                    border: 1.5px solid var(--ui-primary);
+                }

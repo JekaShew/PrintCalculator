@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data;
 using PrintCalculator.Data.Models.Paper;
 using PrintCalculator.Data.Models.PostPrint;
 using PrintCalculator.Data.Models.Storage;
 using PrintCalculator.Data.Models.TechProcess;
+using PrintCalculator.Data.Models.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +41,24 @@ namespace PrintCalculator.Data
         public DbSet<PaperPriceGroup> PaperPriceGroups { get; set; }
         public DbSet<PaperSize> PaperSizes { get; set; }
         public DbSet<PaperType> PaperTypes { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            if (modelBuilder == null)
+                throw new ArgumentNullException("modelBuilder");
+
+            // for the other conventions, we do a metadata model loop
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                // equivalent of modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+                entityType.GetForeignKeys()
+                    .Where(fk => !fk.IsOwnership && fk.DeleteBehavior == DeleteBehavior.Cascade)
+                    .ToList()
+                    .ForEach(fk => fk.DeleteBehavior = DeleteBehavior.Restrict);
+            }
+
+            base.OnModelCreating(modelBuilder);
+        }
 
         public AppDBContext(DbContextOptions<AppDBContext> options) : base(options) { }
         public void Seed()
@@ -281,7 +299,7 @@ namespace PrintCalculator.Data
                     Title = "StorageProductPaper8",
                     AmountPackages = 3,
                     Amount = 30,
-                    UnitMeasureId = unitMeasures[3].Id,
+                    UnitMeasureId = unitMeasures[1].Id,
                     SubCategoryId = subCategories[1].Id,
                     StorageId = storages[3].Id,
                 },
@@ -292,7 +310,7 @@ namespace PrintCalculator.Data
                     Title = "StorageProductPaper1",
                     AmountPackages = 3,
                     Amount = 30,
-                    UnitMeasureId = unitMeasures[3].Id,
+                    UnitMeasureId = unitMeasures[0].Id,
                     SubCategoryId = subCategories[0].Id,
                     StorageId = storages[4].Id,
                 },
@@ -725,7 +743,7 @@ namespace PrintCalculator.Data
                     PerPackTime = 3,
                     
                 },
-
+        
                 new PackagingType
                 {
                     Id = Guid.NewGuid(),
@@ -1241,8 +1259,8 @@ namespace PrintCalculator.Data
                     PrintTypeId = printTypes[0].Id,
                     SectorId = sectors[0].Id,
                     StorageId = storages[0].Id,
-                    FormatId = paperFormats[0].Id,
-                    PreferredPaperSizeId = paperSizes[0].Id,
+                    PaperFormatId = paperFormats[0].Id,
+                    PaperSizeId = paperSizes[0].Id,
 
                 },
 
@@ -1300,8 +1318,8 @@ namespace PrintCalculator.Data
                     PrintTypeId = printTypes[1].Id,
                     SectorId = sectors[1].Id,
                     StorageId = storages[0].Id,
-                    FormatId = paperFormats[0].Id,
-                    PreferredPaperSizeId = paperSizes[1].Id,
+                    PaperFormatId = paperFormats[0].Id,
+                    PaperSizeId = paperSizes[1].Id,
 
                 },
 
@@ -1359,8 +1377,8 @@ namespace PrintCalculator.Data
                     PrintTypeId = printTypes[2].Id,
                     SectorId = sectors[2].Id,
                     StorageId = storages[1].Id,
-                    FormatId = paperFormats[2].Id,
-                    PreferredPaperSizeId = paperSizes[1].Id,
+                    PaperFormatId = paperFormats[2].Id,
+                    PaperSizeId = paperSizes[1].Id,
 
                 },
             };

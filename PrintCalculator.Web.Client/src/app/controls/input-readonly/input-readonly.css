@@ -1,0 +1,33 @@
+.input-readonly {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .input-readonly .label {
+        width: 33%;
+        font-size: calc(1.5rem * var(--font-multiplier));
+        font-weight: 400;
+    }
+
+    .input-readonly input {
+        border: 1.5px solid var(--ui-dark);
+        font-size: calc(1.5rem * var(--font-multiplier));
+        line-height: calc(1.5rem * var(--font-multiplier));
+        outline: none;
+        padding: calc(0.5rem * var(--space-multiplier));
+    }
+
+        .input-readonly input:active,
+        .input-readonly input:focus {
+            border: 1.5px solid var(--ui-dark);
+        }
+
+    .input-readonly.x1 input {
+        width: 100%;
+    }
+
+    .input-readonly.x2 input {
+        width: 66%;
+    }

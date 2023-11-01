@@ -1,4 +1,4 @@
-﻿using PrintCalculator.Abstract.Data.Paper;
+﻿using PrintCalculator.ViewModels.Data.Paper;
 using System;
 using System.Collections.Generic;
 using System.Linq;

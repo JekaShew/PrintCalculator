@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.PostPrint;
+using PrintCalculator.ViewModels.Data.PostPrint;
 using PrintCalculator.Abstract.PostPrintInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -53,7 +53,7 @@ namespace PrintCalculator.Services.PostPrintServices
         {
             var postPrintTarget = await _appDBContext.PostPrintTargets.FirstOrDefaultAsync(ppt => ppt.Id == updatedPostPrintTarget.Id);
 
-            postPrintTarget.Id = updatedPostPrintTarget.Id;
+            postPrintTarget.Id = updatedPostPrintTarget.Id.Value;
             postPrintTarget.Title = updatedPostPrintTarget.Title;
 
             await _appDBContext.SaveChangesAsync();

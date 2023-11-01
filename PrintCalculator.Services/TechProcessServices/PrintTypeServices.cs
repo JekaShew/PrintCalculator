@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.TechProcess;
+using PrintCalculator.ViewModels.Data.TechProcess;
 using PrintCalculator.Abstract.TechProcessInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -53,7 +53,7 @@ namespace PrintCalculator.Services.TechProcessServices
         {
             var printType = await _appDBContext.PrintTypes.FirstOrDefaultAsync(pt => pt.Id == updatedPrintType.Id);
 
-            printType.Id = updatedPrintType.Id;
+            printType.Id = updatedPrintType.Id.Value;
             printType.Title = updatedPrintType.Title;
 
             await _appDBContext.SaveChangesAsync();

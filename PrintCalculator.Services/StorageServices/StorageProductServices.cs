@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.Storage;
+using PrintCalculator.ViewModels.Data.Storage;
 using PrintCalculator.Abstract.StorageInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -65,11 +65,11 @@ namespace PrintCalculator.Services.StorageServices
         {
             var storageProduct = await _appDBContext.StorageProducts.FirstOrDefaultAsync(sp => sp.Id == updatedStorageProduct.Id);
 
-            storageProduct.Id = updatedStorageProduct.Id;
+            storageProduct.Id = updatedStorageProduct.Id.Value;
             storageProduct.Title = updatedStorageProduct.Title;
-            storageProduct.SubCategoryId = updatedStorageProduct.SubCategory.Id;
-            storageProduct.StorageId = updatedStorageProduct.Storage.Id;
-            storageProduct.UnitMeasureId = updatedStorageProduct.UnitMeasure.Id;
+            storageProduct.SubCategoryId = updatedStorageProduct.SubCategory.VM.Id.Value;
+            storageProduct.StorageId = updatedStorageProduct.Storage.VM.Id.Value;
+            storageProduct.UnitMeasureId = updatedStorageProduct.UnitMeasure.VM.Id.Value;
             storageProduct.SubCategory = null;
             storageProduct.Storage = null;
             storageProduct.UnitMeasure = null;

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.Storage;
+using PrintCalculator.ViewModels.Data.Storage;
 using PrintCalculator.Abstract.StorageInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -51,7 +51,7 @@ namespace PrintCalculator.Services.StorageServices
         {
             var unitMeasure = await _appDBContext.UnitMeasures.FirstOrDefaultAsync(um => um.Id == updatedUnitMeasure.Id);
 
-            unitMeasure.Id = updatedUnitMeasure.Id;
+            unitMeasure.Id = updatedUnitMeasure.Id.Value;
             unitMeasure.Title = updatedUnitMeasure.Title;
 
             await _appDBContext.SaveChangesAsync();

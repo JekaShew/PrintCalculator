@@ -1,0 +1,56 @@
+:root {
+    --font-multiplier: 1.0;
+    --size-multiplier: 1.0;
+    --space-multiplier: 1.0;
+}
+
+body {
+    font-family: Verdana;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+
+
+@media (max-width: 1919.98px) {
+    :root {
+        --font-multiplier: 0.8;
+        --space-multiplier: 0.7;
+    }
+}
+
+@media (max-width: 1449.98px) {
+    :root {
+        --font-multiplier: 0.8;
+        --space-multiplier: 0.7;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    :root {
+        --font-multiplier: 0.55;
+        --space-multiplier: 0.5;
+    }
+}
+
+@media (max-width: 849.98px) {
+    :root {
+        --font-multiplier: 0.45;
+        --space-multiplier: 0.45;
+    }
+}
+
+@media (max-width: 699.98px) {
+    :root {
+        --font-multiplier: 0.5;
+        --space-multiplier: 0.35;
+    }
+}
+
+@media (max-width: 575.98px) {
+    :root {
+        --font-multiplier: 0.75;
+    }
+}

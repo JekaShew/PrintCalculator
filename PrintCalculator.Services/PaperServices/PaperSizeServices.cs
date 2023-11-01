@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.Paper;
+using PrintCalculator.ViewModels.Data.Paper;
 using PrintCalculator.Abstract.PaperInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -53,7 +53,7 @@ namespace PrintCalculator.Services.PaperServices
         {
             var paperSize = await _appDBContext.PaperSizes.FirstOrDefaultAsync(ps => ps.Id == updatedPaperSize.Id);
 
-            paperSize.Id = updatedPaperSize.Id;
+            paperSize.Id = updatedPaperSize.Id.Value;
             paperSize.Title = updatedPaperSize.Title;
             paperSize.Height = updatedPaperSize.Height;
             paperSize.Width = updatedPaperSize.Width;

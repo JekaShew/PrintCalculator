@@ -4,4 +4,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PrintCalculator.UI.Gen2\PrintCalculator.UI.Gen2.csproj" />
+  
+    <ProjectReference Include="..\PrintCalculator.ViewModels\PrintCalculator.ViewModels.csproj" />
+  </ItemGroup>
+
 </Project>

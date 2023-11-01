@@ -1,0 +1,28 @@
+.autocomplete-field {
+    display: flex;
+    flex-direction: column;
+}
+
+    .autocomplete-field .top {
+        font-weight: 600;
+        font-size: calc(1.5rem * var(--font-multiplier));
+        line-height: calc(1.5rem * var(--font-multiplier));
+        white-space: nowrap;
+    }
+
+    .autocomplete-field .bottom {
+        font-weight: 400;
+        font-size: calc(1rem * var(--font-multiplier));
+        line-height: calc(1rem * var(--font-multiplier));
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+        .autocomplete-field .bottom .left {
+
+        }
+
+        .autocomplete-field .bottom .right {
+
+        }

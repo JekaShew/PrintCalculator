@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.Paper;
+using PrintCalculator.ViewModels.Data.Paper;
 using PrintCalculator.Abstract.PaperInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -53,7 +53,7 @@ namespace PrintCalculator.Services.PaperServices
         {
             var paperClass = await _appDBContext.PaperClasses.FirstOrDefaultAsync(pc => pc.Id == updatedPaperClass.Id);
 
-            paperClass.Id = updatedPaperClass.Id;
+            paperClass.Id = updatedPaperClass.Id.Value;
             paperClass.Title = updatedPaperClass.Title;
 
             await _appDBContext.SaveChangesAsync();

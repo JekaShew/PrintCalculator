@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.Paper;
+using PrintCalculator.ViewModels.Data.Paper;
 using PrintCalculator.Abstract.PaperInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -64,7 +64,7 @@ namespace PrintCalculator.Services.PaperServices
         {
             var paperType = await _appDBContext.PaperTypes.FirstOrDefaultAsync(pt => pt.Id == updatedPaperType.Id);
 
-            paperType.Id = updatedPaperType.Id;
+            paperType.Id = updatedPaperType.Id.Value;
             paperType.Title = updatedPaperType.Title;
             paperType.Width = updatedPaperType.Width;
             paperType.OneSided = updatedPaperType.OneSided;
@@ -74,9 +74,9 @@ namespace PrintCalculator.Services.PaperServices
             paperType.MarkupMinAmount = updatedPaperType.MarkupMinAmount;
             paperType.MarkupMinAmountCoefficient = updatedPaperType.MarkupMinAmountCoefficient;
 
-            paperType.PaperDensityId = updatedPaperType.PaperDensity.Id;
-            paperType.PaperClassId = updatedPaperType.PaperClass.Id;
-            paperType.PaperPriceGroupId = updatedPaperType.PaperPriceGroup.Id;
+            paperType.PaperDensityId = updatedPaperType.PaperDensity.VM.Id.Value;
+            paperType.PaperClassId = updatedPaperType.PaperClass.VM.Id.Value;
+            paperType.PaperPriceGroupId = updatedPaperType.PaperPriceGroup.VM.Id.Value;
 
             paperType.PaperDensity = null;
             paperType.PaperClass = null;

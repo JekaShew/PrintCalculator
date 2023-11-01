@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.PostPrint;
+using PrintCalculator.ViewModels.Data.PostPrint;
 using PrintCalculator.Abstract.PostPrintInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -65,7 +65,7 @@ namespace PrintCalculator.Services.PostPrintServices
         {
             var postPrintOperation = await _appDBContext.PostPrintOperations.FirstOrDefaultAsync(ppo => ppo.Id == updatedPostPrintOperation.Id);
 
-            postPrintOperation.Id = updatedPostPrintOperation.Id;
+            postPrintOperation.Id = updatedPostPrintOperation.Id.Value;
             postPrintOperation.Title = updatedPostPrintOperation.Title;
             postPrintOperation.MeasureUnit = updatedPostPrintOperation.MeasureUnit;
             postPrintOperation.ConsumesPaperMaterial = updatedPostPrintOperation.ConsumesPaperMaterial;
@@ -73,9 +73,9 @@ namespace PrintCalculator.Services.PostPrintServices
             postPrintOperation.PreparationTime = updatedPostPrintOperation.PreparationTime;
             postPrintOperation.OperationTime = updatedPostPrintOperation.OperationTime;
 
-            postPrintOperation.PostPrintGroupId = updatedPostPrintOperation.PostPrintGroup.Id;
-            postPrintOperation.PostPrintTargetId = updatedPostPrintOperation.PostPrintTarget.Id;
-            postPrintOperation.SectorId = updatedPostPrintOperation.Sector.Id;
+            postPrintOperation.PostPrintGroupId = updatedPostPrintOperation.PostPrintGroup.VM.Id.Value;
+            postPrintOperation.PostPrintTargetId = updatedPostPrintOperation.PostPrintTarget.VM.Id.Value;
+            postPrintOperation.SectorId = updatedPostPrintOperation.Sector.VM.Id.Value;
 
             postPrintOperation.PostPrintGroup = null;
             postPrintOperation.PostPrintTarget = null;

@@ -1,0 +1,36 @@
+.dialog {
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.55);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+    .dialog > .widget {
+        width: calc(30rem * var(--space-multiplier));
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .dialog > .widget > .content > .content {
+            min-height: calc(8rem * var(--space-multiplier));
+        }
+
+    .dialog > .widget > .content > .controls {
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .dialog > .widget > .content > .controls.x1 > button {
+            width: 100%;
+        }
+
+        .dialog > .widget > .content > .controls.x2 > button {
+            width: calc(50% - 2rem * var(--space-multiplier));
+        }

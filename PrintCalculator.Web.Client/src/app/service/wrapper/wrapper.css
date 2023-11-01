@@ -1,0 +1,87 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.wrapper .wrapper-sidebar {
+    background: var(--ui-primary);
+    width: calc(18rem * var(--font-multiplier));
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 300;
+}
+
+    .wrapper .wrapper-content {
+        position: absolute;
+        left: calc(18rem * var(--font-multiplier));
+        width: calc(100% - 18rem * var(--font-multiplier));
+    }
+
+.wrapper .wrapper-sidebar .header {
+    font-size: calc(2.5rem * var(--font-multiplier));
+    text-align: center;
+    padding-top: calc(1rem * var(--space-multiplier));
+    padding-bottom: calc(1rem * var(--space-multiplier));
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: calc(2rem * var(--space-multiplier));
+}
+
+    .wrapper .wrapper-sidebar .navs {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: calc(100vh - 8rem * var(--space-multiplier));
+    }
+
+    .wrapper .wrapper-sidebar .navs .nav {
+        padding-left: calc(1rem * var(--space-multiplier));
+        padding-right: calc(1rem * var(--space-multiplier));
+        padding-top: calc(0.5rem * var(--space-multiplier));
+        padding-bottom: calc(0.5rem * var(--space-multiplier));
+        cursor: pointer;
+    }
+
+        .wrapper .wrapper-sidebar .navs .nav:hover {
+            background: var(--ui-primary-tint);
+        }
+
+        .wrapper .wrapper-sidebar .navs .nav a {
+            font-size: calc(1.5rem * var(--font-multiplier));
+            text-decoration: none;
+            color: #ffffff;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+            .wrapper .wrapper-sidebar .navs .nav a:visited,
+            .wrapper .wrapper-sidebar .navs .nav a:active,
+            .wrapper .wrapper-sidebar .navs .nav a:link {
+                color: #ffffff;
+            }
+
+        .wrapper .wrapper-sidebar .navs .nav .icon {
+            width: calc(3rem * var(--font-multiplier));
+            text-align: center;
+            color: inherit;
+        }
+
+        .wrapper .wrapper-sidebar .navs .nav .label {
+            padding-left: calc(1rem * var(--space-multiplier));
+            color: inherit;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .wrapper .wrapper-sidebar .navs .nav a img {
+            height: calc(2rem * var(--font-multiplier));
+        }
+
+            .wrapper .wrapper-sidebar .navs .nav a:visited {
+                color: var(--cl-primary);
+                text-decoration: none;
+            }

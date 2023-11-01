@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PrintCalculator.UI.Gen2.Data.Abstract;
 
 namespace PrintCalculator.Data.Models.Paper
 {
-    public class PaperCoefficient
+    public class PaperCoefficient : Model
     {
-        public Guid Id { get; set; }
+        //public Guid Id { get; set; }
         public string Title { get; set; }
         public float Coefficient { get; set; }
 

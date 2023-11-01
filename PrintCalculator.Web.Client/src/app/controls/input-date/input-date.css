@@ -1,0 +1,98 @@
+.input-date {
+    width: 100%;
+    position: relative;
+}
+
+    .input-date > .input,
+    .input-date > .input input {
+        cursor: pointer;
+    }
+
+
+.input-date > .popup {
+    position: absolute;
+    width: calc(32rem * var(--space-multiplier));
+    background: #ffffff;
+    z-index: 1000;
+    box-shadow: 2px 2px 8px #000000;
+}
+
+    .input-date .popup .widget {
+        padding: calc(1rem * var(--space-multiplier));
+    }
+
+    .input-date > .popup .content .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+        .input-date > .popup .content .header input {
+            text-align: center;
+        }
+
+        .input-date > .popup .content .header > div:nth-child(1) {
+            width: calc(3.5rem * var(--font-multiplier));
+            margin-right: calc(0.5rem * var(--space-multiplier));
+        }
+
+        .input-date > .popup .content .header > div:nth-child(2) {
+            width: calc(3.5rem * var(--font-multiplier));
+            margin-right: calc(0.5rem * var(--space-multiplier));
+        }
+
+        .input-date > .popup .content .header > div:nth-child(3) {
+            width: calc(5rem * var(--font-multiplier));
+        }
+
+.input-date > .popup .content .calendar {
+
+}
+
+    .input-date > .popup .content .calendar > .days-of-week {
+        display: flex;
+        flex-direction: row;
+        margin-top: calc(1rem * var(--space-multiplier));
+    }
+        .input-date > .popup .content .calendar > .days-of-week .input input {
+            text-align: center;
+        }
+
+        .input-date > .popup .content .calendar > .days-of-week .input:nth-child(n+6) input {
+            background: #f77878;
+            background: var(--ui-error);
+            border: 1.5px solid #975555;
+            border: 1.5px solid var(--ui-error-tint);
+            color: #ffffff;
+        }
+
+        .input-date > .popup .content .calendar > .days-of-week .input:nth-child(-n+5) input {
+            border: 1.5px solid var(--ui-primary);
+        }
+
+    .input-date > .popup .content .calendar > .table {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+        .input-date > .popup .content .calendar > .table > .week {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+            .input-date > .popup .content .calendar > .table > .week button,
+            .input-date > .popup .content .calendar > .table > .week .input {
+                width: 14.285%;
+                color: #000000;
+            }
+
+                .input-date > .popup .content .calendar > .table > .week button:hover {
+                    color: #ffffff;
+                }
+
+                .input-date > .popup .content .calendar > .table > .week .input input {
+                    border: 1.5px solid var(--ui-primary);
+                }
+

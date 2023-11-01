@@ -1,0 +1,179 @@
+:root {
+    --ui-primary: #4495cf;
+    --ui-secondary: #53c1d5;
+    --ui-success: #25c245;
+    --ui-danger: #f1be32;
+    --ui-error: #e53b3b;
+    --ui-dark: #9ea5a9;
+
+    --ui-primary-tint: #3c82b4;
+    --ui-secondary-tint: #3eb1c6;
+    --ui-success-tint: #24aa40;
+    --ui-danger-tint: #c7a33e;
+    --ui-error-tint: #ac3838;
+    --ui-dark-tint: #90969a;
+
+    --cl-theme: #4495cf;
+}
+
+
+
+.ui-primary {
+    color: #fff;
+    background-color: var(--ui-primary);
+    border: 1px solid var(--ui-primary);
+}
+    .ui-primary:hover {
+        background-color: var(--ui-primary-tint);
+        border-color: var(--ui-primary-tint);
+    }
+
+.ui-secondary {
+    color: #fff;
+    background-color: var(--ui-secondary);
+    border: 1px solid var(--ui-secondary);
+}
+    .ui-secondary:hover {
+        background-color: var(--ui-secondary-tint);
+        border-color: var(--ui-secondary-tint);
+    }
+
+.ui-success {
+    color: #fff;
+    background-color: var(--ui-success);
+    border: 1px solid var(--ui-success);
+}
+    .ui-success:hover {
+        background-color: var(--ui-success-tint);
+        border-color: var(--ui-success-tint);
+    }
+
+.ui-danger {
+    color: #000;
+    background-color: var(--ui-danger);
+    border: 1px solid var(--ui-danger);
+}
+    .ui-danger:hover {
+        background-color: var(--ui-danger-tint);
+        border-color: var(--ui-danger-tint);
+    }
+
+.ui-error {
+    color: #fff;
+    background-color: var(--ui-error);
+    border: 1px solid var(--ui-error);
+}
+    .ui-error:hover {
+        background-color: var(--ui-error-tint);
+        border-color: var(--ui-error-tint);
+    }
+
+.ui-dark {
+    color: #fff;
+    background-color: var(--ui-dark);
+    border: 1px solid var(--ui-dark);
+}
+    .ui-dark:hover {
+        background-color: var(--ui-dark-tint);
+        border-color: var(--ui-dark-tint);
+    }
+
+
+
+.ui-outline-primary {
+    color: var(--ui-primary);
+    border: 1px solid;
+    border-color: var(--ui-primary);
+    background: #ffffff;
+}
+    .ui-outline-primary:hover {
+        color: #fff;
+        background-color: var(--ui-primary);
+        border: 1px solid var(--ui-primary);
+    }
+
+.ui-outline-secondary {
+    color: var(--ui-secondary);
+    border: 1px solid;
+    border-color: var(--ui-secondary);
+    background: #ffffff;
+}
+    .ui-outline-secondary:hover {
+        color: #fff;
+        background-color: var(--ui-secondary);
+        border: 1px solid var(--ui-secondary);
+    }
+
+.ui-outline-success {
+    color: var(--ui-success);
+    border: 1px solid;
+    border-color: var(--ui-success);
+    background: #ffffff;
+}
+    .ui-outline-success:hover {
+        color: #fff;
+        background-color: var(--ui-success);
+        border: 1px solid var(--ui-success);
+    }
+
+.ui-outline-danger {
+    color: var(--ui-danger);
+    border: 1px solid;
+    border-color: var(--ui-danger);
+    background: #ffffff;
+}
+    .ui-outline-danger:hover {
+        color: #000;
+        background-color: var(--ui-danger);
+        border: 1px solid var(--ui-danger);
+    }
+
+.ui-outline-error {
+    color: var(--ui-error);
+    border: 1px solid;
+    border-color: var(--ui-error);
+    background: #ffffff;
+}
+    .ui-outline-error:hover {
+        color: #fff;
+        background-color: var(--ui-error);
+        border: 1px solid var(--ui-error);
+    }
+
+.ui-outline-dark {
+    color: var(--ui-dark);
+    border: 1px solid;
+    border-color: var(--ui-dark);
+    background: #ffffff;
+}
+    .ui-outline-dark:hover {
+        color: #fff;
+        background-color: var(--ui-dark);
+        border: 1px solid var(--ui-dark);
+    }
+
+
+
+.ui-text-primary {
+    color: var(--ui-primary);
+}
+
+.ui-text-secondary {
+    color: var(--ui-secondary);
+}
+
+.ui-text-success {
+    color: var(--ui-success);
+}
+
+.ui-text-danger {
+    color: var(--ui-danger);
+}
+
+.ui-text-error {
+    color: var(--ui-error);
+}
+
+.ui-text-dark {
+    color: var(--ui-dark);
+}

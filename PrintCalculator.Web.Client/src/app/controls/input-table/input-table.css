@@ -1,0 +1,93 @@
+.input-table {
+}
+
+    .input-table .header {
+        position: relative;
+        margin-bottom: calc(1rem * var(--space-multiplier));
+    }
+
+        .input-table .header .controls {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .input-table .header .custom-controls {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .input-table .header .controls button:not(:first-child) {
+            margin-left: calc(0.5rem * var(--space-multiplier));
+        }
+
+.input-table > .header > .label {
+    width: 100%;
+    font-size: calc(2rem * var(--font-multiplier));
+    color: var(--cl-primary);
+    text-align: center;
+}
+
+    .input-table > .header > .label > span {
+        cursor: pointer;
+    }
+
+    .input-table > .content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+        .input-table > .content > div {
+            padding: calc(1rem * var(--space-multiplier));
+            width: 100%;
+        }
+
+    .input-table > .content > div:nth-child(2n) {
+        background: #f0f2f5;
+    }
+
+    .input-table > .content.nodata {
+        text-align: center;
+    }
+
+
+       
+        .input-table > .content > div.cols-1 {
+            width: 100%;
+        }
+
+        .input-table > .content > div.cols-2 {
+            width: calc(50% - 2rem * var(--space-multiplier));
+        }
+
+        .input-table > .content > div.cols-3 {
+            width: calc(33% - 3rem * var(--space-multiplier));
+        }
+
+        .input-table > .content > div.cols-4 {
+            display:flex;
+            flex-direction: row;
+            justify-content:center;
+            width: calc(25% - 4rem * var(--space-multiplier));
+        }
+
+        .input-table > .content.single-row > div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .input-table > .content.single-row > div > div:first-child {
+            width: calc(100% - 4rem * var(--font-multiplier));
+        }
+
+        .input-table > .content.single-row > div > *:last-child {
+            width: calc(3rem * var(--font-multiplier));
+            height: calc(3rem * var(--font-multiplier));
+        }

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.TechProcess;
+using PrintCalculator.ViewModels.Data.TechProcess;
 using PrintCalculator.Abstract.TechProcessInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -53,7 +53,7 @@ namespace PrintCalculator.Services.TechProcessServices
         {
             var option = await _appDBContext.Options.FirstOrDefaultAsync(o => o.Id == updatedOption.Id);
 
-            option.Id = updatedOption.Id;
+            option.Id = updatedOption.Id.Value;
             option.Title = updatedOption.Title;
             option.Description = updatedOption.Description;
 

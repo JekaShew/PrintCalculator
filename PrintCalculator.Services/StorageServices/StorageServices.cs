@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.Storage;
+using PrintCalculator.ViewModels.Data.Storage;
 using PrintCalculator.Abstract.StorageInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -50,7 +50,7 @@ namespace PrintCalculator.Services.StorageServices
         {
             var storage = await _appDBContext.Storages.FirstOrDefaultAsync(s => s.Id == updatedStorage.Id);
 
-            storage.Id = updatedStorage.Id;
+            storage.Id = updatedStorage.Id.Value;
             storage.Title = updatedStorage.Title;
             storage.Description = updatedStorage.Description;
 

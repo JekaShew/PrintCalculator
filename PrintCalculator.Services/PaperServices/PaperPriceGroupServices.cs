@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PrintCalculator.Abstract.Data.Paper;
+using PrintCalculator.ViewModels.Data.Paper;
 using PrintCalculator.Abstract.PaperInterfaces;
 using PrintCalculator.Data;
 using System;
@@ -58,14 +58,14 @@ namespace PrintCalculator.Services.PaperServices
         {
             var paperPriceGroup = await _appDBContext.PaperPriceGroups.FirstOrDefaultAsync(ppg => ppg.Id == updatedPaperPriceGroup.Id);
 
-            paperPriceGroup.Id = updatedPaperPriceGroup.Id;
+            paperPriceGroup.Id = updatedPaperPriceGroup.Id.Value;
             paperPriceGroup.Title = updatedPaperPriceGroup.Title;
             paperPriceGroup.PricePerKg = updatedPaperPriceGroup.PricePerKg;
             paperPriceGroup.MarkupMaxAmount = updatedPaperPriceGroup.MarkupMaxAmount;
             paperPriceGroup.MarkupMaxCoefficient = updatedPaperPriceGroup.MarkupMaxCoefficient;
             paperPriceGroup.MarkupMinAmount = updatedPaperPriceGroup.MarkupMinAmount;
             paperPriceGroup.MarkupMinCoefficient = updatedPaperPriceGroup.MarkupMinCoefficient;
-            paperPriceGroup.PaperClassId = updatedPaperPriceGroup.PaperClass.Id;
+            paperPriceGroup.PaperClassId = updatedPaperPriceGroup.PaperClass.VM.Id.Value;
             paperPriceGroup.PaperClass = null;
 
             await _appDBContext.SaveChangesAsync();
